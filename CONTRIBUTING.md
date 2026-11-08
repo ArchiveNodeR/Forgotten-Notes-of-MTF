@@ -1,0 +1,1 @@
+# Имя - ссылка на себя(по желанию) - с чем помогали проекту / Name - link to your own profile (optional) - how you helped the project
