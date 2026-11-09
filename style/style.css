@@ -1,0 +1,362 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.body {
+    background-image: 
+        radial-gradient(circle at center, rgba(10, 15, 20, 0.4) 0%, rgba(3, 4, 6, 0.88) 100%),
+        url('../assets/image/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #d0d5dd;
+    font-family: 'Consolas', 'Courier New', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   TOP BAR & HAZARD STRIPES
+   ========================================== */
+#top-bar {
+    background-color: rgba(8, 8, 10, 0.95);
+    border-bottom: 2px solid #ffaa00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+#top-bar p {
+    color: #ffaa00;
+    padding: 8px 15px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+.hazard-stripe {
+    width: 50px;
+    height: 100%;
+    min-height: 32px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #ffaa00,
+        #ffaa00 10px,
+        #111 10px,
+        #111 20px
+    );
+}
+
+/* ==========================================
+   NAVBAR (HEADER BUTTONS)
+   ========================================== */
+.scp-navbar {
+    background: rgba(12, 14, 18, 0.85);
+    border-bottom: 1px solid rgba(255, 170, 0, 0.3);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: #a0a7b4;
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    color: #ffaa00;
+    background: rgba(255, 170, 0, 0.08);
+    border-bottom-color: #ffaa00;
+}
+
+.terminal-status {
+    color: #525963;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   MAIN TERMINAL & CAROUSEL
+   ========================================== */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Прижимаем терминал к левому краю */
+    align-items: center;
+    padding: 40px 50px; /* Добавили отступ слева */
+    max-width: 1905px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.terminal-container {
+    width: 100%;
+    max-width: 1215px;
+    min-height: 700px;
+    background: rgba(10, 12, 16, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 3px solid #ffaa00;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 0 25px 25px 25px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.panel-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.security-badge {
+    background: #a30000;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    letter-spacing: 1px;
+    border: 1px solid #ff3333;
+}
+
+.clearance-info {
+    color: #8a94a6;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+}
+
+.user-info {
+    color: #8a94a6;
+    font-size: 0.78rem;
+}
+
+.status-online {
+    color: #00ff66;
+}
+
+/* CAROUSEL TRACK & CARDS */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.carousel-btn {
+    background: rgba(20, 25, 32, 0.8);
+    border: 1px solid rgba(255, 170, 0, 0.4);
+    color: #ffaa00;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 80px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 5;
+}
+
+.carousel-btn:hover {
+    background: #ffaa00;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
+}
+
+.cards-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.cards-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.scp-navbar {
+    background: rgba(15, 18, 23, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    margin: 0 -25px 20px -25px; /* Растягиваем на всю ширину внутри контейнера (от края до края) */
+    width: calc(100% + 50px);
+}
+
+.scp-card {
+    flex: 0 0 calc(25% - 15px);
+    min-width: 240px;
+    background: rgba(18, 21, 26, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 2px solid rgba(255, 170, 0, 0.5);
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    transition: all 0.2s ease;
+}
+
+.scp-card:hover {
+    border-color: #ffaa00;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* STAMPS */
+.stamp {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: 2px solid;
+    padding: 2px 6px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transform: rotate(5deg);
+    opacity: 0.6;
+}
+
+.stamp.classified { color: #ff3333; border-color: #ff3333; }
+.stamp.top-secret { color: #ff9900; border-color: #ff9900; }
+.stamp.restricted { color: #ffcc00; border-color: #ffcc00; }
+.stamp.confidential { color: #00cc66; border-color: #00cc66; }
+
+.card-doc-id {
+    color: #66707d;
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    color: #ffaa00;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.card-details {
+    list-style: none;
+    font-size: 0.78rem;
+    color: #a0a7b4;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.card-details strong {
+    color: #ffffff;
+}
+
+.view-file-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 170, 0, 0.3);
+    color: #ffaa00;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.view-file-btn:hover {
+    background: #ffaa00;
+    color: #000;
+}
+
+/* ==========================================
+   SYSTEM LOG CONSOLE
+   ========================================== */
+.system-log-panel {
+    min-height: 190px;
+    margin-top: 30px;
+    background: rgba(12, 14, 17, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px;
+}
+
+.log-title {
+    color: #8a94a6;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.log-console {
+    font-size: 0.75rem;
+    color: #00ff66;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.site-footer {
+    background-color: rgba(6, 7, 9, 0.95);
+    border-top: 1px solid rgba(255, 170, 0, 0.3);
+    color: #7a828e;
+    padding: 15px 20px;
+    margin-top: auto;
+    font-size: 0.75rem;
+}
+
+.footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-left { display: flex; align-items: center; gap: 10px; }
+.footer-title { color: #ffaa00; font-weight: bold; text-decoration: none; }
+.footer-tag { background: rgba(255, 170, 0, 0.1); color: #ffaa00; padding: 2px 6px; font-size: 0.65rem; }
+.site-footer nav ul { list-style: none; display: flex; gap: 18px; }
+.site-footer nav a { color: #a0a7b4; text-decoration: none; }
+.site-footer nav a:hover { color: #ffaa00; }
+.footer-signature { color: #525963; font-weight: bold; }

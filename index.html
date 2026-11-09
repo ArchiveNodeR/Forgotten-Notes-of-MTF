@@ -1,11 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>⌬ Forgotten Notes of MTF</title>
 </head>
-<body>
-    
+
+<body class="body">
+
+    <!-- Верхняя предупреждающая панель -->
+    <div id="top-bar">
+        <div class="hazard-stripe left"></div>
+        <p>
+            ⚠️ <strong>ALERT:</strong> ПОСЛЕ НАРУШЕНИЯ УСЛОВИЙ СОДЕРЖАНИЯ ЗАПИСИ ПОВРЕЖДЕНЫ. ИНФОРМАЦИЯ УТОЧНЯЕТСЯ. ⚠️
+        </p>
+        <div class="hazard-stripe right"></div>
+    </div>
+
+    <!-- Основная рабочая область -->
+    <main class="main-content">
+        <div class="terminal-container scp-panel">
+
+            <nav class="scp-navbar">
+                <ul class="nav-links">
+                    <li><button class="nav-btn active" data-category="all">HOME</button></li>
+                    <li><button class="nav-btn" data-category="classifications">CLASSIFICATIONS</button></li>
+                    <li><button class="nav-btn" data-category="about">ABOUT SCP</button></li>
+                    <li><button class="nav-btn" data-category="items">ITEMS</button></li>
+                    <li><button class="nav-btn" data-category="map">MAP</button></li>
+                    <li><button class="nav-btn" data-category="facts">FACTS</button></li>
+                </ul>
+                <div class="terminal-status">
+                    [SEC-NET: CONNECTED] [ID: MTF-E-11]
+                </div>
+            </nav>
+
+            <div class="panel-header">
+                <div class="security-badge">SECURITY LEVEL 4</div>
+                <div class="clearance-info">CLEARANCE: GRANTED &nbsp;&nbsp;|&nbsp;&nbsp; NETWORK: INTRANET SECURE</div>
+                <div class="user-info">USER: ADMIN_DR_BRIGHT &nbsp;|&nbsp; STATUS: <span class="status-online">ONLINE
+                        ■</span></div>
+            </div>
+
+            <!-- Карусель карточек с кнопками прокрутки -->
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="prevBtn">&lt;</button>
+
+                <div class="cards-viewport">
+                    <div class="cards-track" id="cardsTrack">
+
+                        <!-- Карточка 1 -->
+                        <div class="scp-card" data-category="about">
+                            <span class="stamp classified">CLASSIFIED</span>
+                            <div class="card-doc-id">DOC #SCP-173</div>
+                            <h2 class="card-title">DOC #SCP-173</h2>
+                            <ul class="card-details">
+                                <li><strong>OBJECT CLASS:</strong> EUCLID</li>
+                                <li><strong>CONTAINMENT:</strong> EUCLID</li>
+                                <li><strong>DISRUPTION:</strong> KENEQ</li>
+                                <li><strong>RISK:</strong> WARNING</li>
+                            </ul>
+                            <button class="view-file-btn">VIEW FILE &gt;</button>
+                        </div>
+
+                        <!-- Карточка 2 -->
+                        <div class="scp-card" data-category="about">
+                            <span class="stamp top-secret">TOP SECRET</span>
+                            <div class="card-doc-id">DOC #SCP-682</div>
+                            <h2 class="card-title">DOC #SCP-682</h2>
+                            <ul class="card-details">
+                                <li><strong>OBJECT CLASS:</strong> KETER</li>
+                                <li><strong>CONTAINMENT:</strong> AMIDA</li>
+                                <li><strong>DISRUPTION:</strong> EKHI</li>
+                                <li><strong>RISK:</strong> CRITICAL</li>
+                            </ul>
+                            <button class="view-file-btn">VIEW FILE &gt;</button>
+                        </div>
+
+                        <!-- Карточка 3 -->
+                        <div class="scp-card" data-category="about">
+                            <span class="stamp restricted">RESTRICTED</span>
+                            <div class="card-doc-id">DOC #SCP-096</div>
+                            <h2 class="card-title">DOC #SCP-096</h2>
+                            <ul class="card-details">
+                                <li><strong>OBJECT CLASS:</strong> EUCLID</li>
+                                <li><strong>CONTAINMENT:</strong> EUCLID</li>
+                                <li><strong>DISRUPTION:</strong> VLAU</li>
+                                <li><strong>RISK:</strong> CAUTION</li>
+                            </ul>
+                            <button class="view-file-btn">VIEW FILE &gt;</button>
+                        </div>
+
+                        <!-- Карточка 4 -->
+                        <div class="scp-card" data-category="about">
+                            <span class="stamp confidential">CONFIDENTIAL</span>
+                            <div class="card-doc-id">DOC #SCP-999</div>
+                            <h2 class="card-title">DOC #SCP-999</h2>
+                            <ul class="card-details">
+                                <li><strong>OBJECT CLASS:</strong> SAFE</li>
+                                <li><strong>CONTAINMENT:</strong> SAFE</li>
+                                <li><strong>DISRUPTION:</strong> NOTICE</li>
+                                <li><strong>RISK:</strong> MINIMAL</li>
+                            </ul>
+                            <button class="view-file-btn">VIEW FILE &gt;</button>
+                        </div>
+
+                        <!-- Карточка 5 (Классификации) -->
+                        <div class="scp-card" data-category="classifications">
+                            <span class="stamp restricted">RESTRICTED</span>
+                            <div class="card-doc-id">DOC #CLASS-01</div>
+                            <h2 class="card-title">OBJECT CLASSES</h2>
+                            <ul class="card-details">
+                                <li><strong>SAFE:</strong> UNDERSTOOD</li>
+                                <li><strong>EUCLID:</strong> UNPREDICTABLE</li>
+                                <li><strong>KETER:</strong> INIMICAL</li>
+                                <li><strong>THAUMIEL:</strong> SECRET</li>
+                            </ul>
+                            <button class="view-file-btn">VIEW FILE &gt;</button>
+                        </div>
+
+                        <!-- Карточка 6 (Карты) -->
+                        <div class="scp-card" data-category="map">
+                            <span class="stamp top-secret">TOP SECRET</span>
+                            <div class="card-doc-id">DOC #MAP-19</div>
+                            <h2 class="card-title">SITE-19 SCHEMATICS</h2>
+                            <ul class="card-details">
+                                <li><strong>SECTOR:</strong> HEAVY CONTAINMENT</li>
+                                <li><strong>STATUS:</strong> DAMAGED</li>
+                                <li><strong>ACCESS:</strong> LEVEL 4 ONLY</li>
+                                <li><strong>HAZARD:</strong> HIGH</li>
+                            </ul>
+                            <button class="view-file-btn">VIEW FILE &gt;</button>
+                        </div>
+
+                        <!-- Карточка 7 (Факты) -->
+                        <div class="scp-card" data-category="facts">
+                            <span class="stamp confidential">CONFIDENTIAL</span>
+                            <div class="card-doc-id">DOC #FACT-09</div>
+                            <h2 class="card-title">MTF PROTOCOLS</h2>
+                            <ul class="card-details">
+                                <li><strong>TASK FORCE:</strong> EPSILON-11</li>
+                                <li><strong>CODE NAME:</strong> NINE-TAILED FOX</li>
+                                <li><strong>PRIMARY TASK:</strong> CONTAINMENT</li>
+                                <li><strong>DESTRUCTIVITY:</strong> MAX</li>
+                            </ul>
+                            <button class="view-file-btn">VIEW FILE &gt;</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" id="nextBtn">&gt;</button>
+            </div>
+
+            <!-- Логи системы -->
+            <div class="system-log-panel">
+                <div class="log-title">SYSTEM LOG:</div>
+                <div class="log-console" id="logConsole">
+                    <p>[04:12:02] AUTHENTICATION SUCCESSFUL</p>
+                    <p>[04:12:05] DECRYPTING FILE DATABASE...</p>
+                    <p>[04:12:08] ACCESS GRANTED TO USER: ADMIN_DR_BRIGHT</p>
+                    <p>[04:12:15] MONITORING CONTAINMENT SECTOR 3</p>
+                    <p>[04:12:22] ALERT: MINOR BREACH DETECTED IN SECTOR 4</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="index.html" class="footer-title">FORGOTTEN NOTES OF MTF</a>
+                <span class="footer-tag">UNOFFICIAL SCP ARCHIVE</span>
+            </div>
+
+            <nav aria-label="Ссылки в подвале">
+                <ul>
+                    <li><a href="credits.html">АВТОРЫ И ЛИЦЕНЗИИ</a></li>
+                    <li><a href="https://www.scpcbgame.com/" target="_blank" rel="noopener">ОФИЦИАЛЬНЫЙ САЙТ ИГРЫ</a>
+                    </li>
+                    <li><a href="https://scp-wiki.wikidot.com/" target="_blank" rel="noopener">SCP WIKI</a></li>
+                    <li><a href="https://github.com/ArchiveNodeR/forgotten-notes-of-mtf" target="_blank"
+                            rel="noopener">GITHUB</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-right">
+                <span class="footer-signature">DEV: ASTER · 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
